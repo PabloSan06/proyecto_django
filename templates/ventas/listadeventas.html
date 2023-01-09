@@ -1,0 +1,35 @@
+{% extends "plantillabase2.html" %} 
+
+{% block content %}
+
+    <p>Ventas encontrados: {{object_list|length}}</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha de Venta</th>
+                    <th>Monto</th>
+                    <th>Cliente ID</th> 
+                    <th>Forma de Pago ID</th> 
+                </tr>
+            </thead>
+            <tbody>
+            
+            {% for venta in ventas %} 
+                    <tr>
+            
+                        <td>{{venta.id}}</td>
+                        <td>{{venta.fecha_de_venta}}</td>
+                        <td>{{venta.monto}}</td> 
+                        <td>{{venta.clientes_id}}</td>          
+                        <td>{{venta.pagoformas_id}}</td>
+                              
+            {% endfor %}             
+                
+                    </tr>
+             
+               
+            </tbody>
+        </table>
+{% endblock %}
